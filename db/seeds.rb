@@ -1,4 +1,4 @@
-Fake accounts and address
+# Fake accounts and address
 10.times do |n|
   name = Faker::Name.unique.name
   email = "example-#{rand(252...4350)}@test-example.com"
