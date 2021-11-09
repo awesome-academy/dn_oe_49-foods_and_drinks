@@ -36,7 +36,7 @@ RSpec.describe Product, type: :model do
     end
     context ".find_products_cart" do
       it "return product has id = 9" do
-        expect(Product.find_products_cart(9)).to eq [product_3]
+        expect(Product.find_products_cart(product_3.id)).to eq [product_3]
       end
       it "return product has id fail" do
         expect(Product.find_products_cart("")).to eq []
