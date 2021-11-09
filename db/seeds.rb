@@ -1,4 +1,4 @@
-Fake accounts and address
+# Fake accounts and address
 10.times do |n|
   name = Faker::Name.unique.name
   email = "example-#{rand(252...4350)}@test-example.com"
@@ -41,15 +41,15 @@ end
 end
 
 # Fake address and set is_default: true
-# User.all.each do |user|
-#   2.times do
-#   user.addresses.create(
-#     name: Faker::Name.unique.name,
-#     phone: Faker::PhoneNumber.phone_number,
-#     address: Faker::Address.full_address)
-#   end
-#   user.addresses.last.update_column :is_default, true
-# end
+User.all.each do |user|
+  2.times do
+  user.addresses.create(
+    name: Faker::Name.unique.name,
+    phone: Faker::PhoneNumber.phone_number,
+    address: Faker::Address.full_address)
+  end
+  user.addresses.last.update_column :is_default, true
+end
 
 # Fake orders
 User.all.sample(1).each do |user|

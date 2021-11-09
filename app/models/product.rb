@@ -53,7 +53,19 @@ class Product < ApplicationRecord
             },
             size:
             {
-              less_than: Settings.image.size_1mb.megabytes,
+              less_than: Settings.image.size_5mb.megabytes,
+              message: I18n.t("validate_image.msg_size")
+            }
+
+  validates :thumbnail,
+            content_type:
+            {
+              in: Settings.image.format,
+              message: I18n.t("validate_image.msg_format")
+            },
+            size:
+            {
+              less_than: Settings.image.size_5mb.megabytes,
               message: I18n.t("validate_image.msg_size")
             }
 
