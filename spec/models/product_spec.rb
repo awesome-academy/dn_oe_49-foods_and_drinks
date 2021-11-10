@@ -99,7 +99,7 @@ RSpec.describe Product, type: :model do
                           .is_at_least(Settings.length.min_5) }
 
       it { is_expected.to validate_length_of(:description)
-                          .is_at_most(Settings.length.min_5) }
+                          .is_at_most(Settings.length.max_250) }
     end
 
     context "field quantity" do
