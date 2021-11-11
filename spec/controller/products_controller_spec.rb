@@ -31,15 +31,17 @@ RSpec.describe ProductsController, type: :controller do
 
   describe "GET /filter" do
     let!(:category_1) { FactoryBot.create :category}
-    let!(:product_1) { FactoryBot.create :product, category_id: category_1.id }
-    let!(:product_2) { FactoryBot.create :product, category_id: category_1.id }
-    let!(:product_3) { FactoryBot.create :product}
+    let!(:product_1) { FactoryBot.create :product, status: "enabled",
+                                         category_id: category_1.id }
+    let!(:product_2) { FactoryBot.create :product, status: "enabled",
+                                         category_id: category_1.id }
+    let!(:product_3) { FactoryBot.create :product, status: "enabled"}
     context "when product any" do
       before do
         get :filter, params: {category_id: category_1.id}
       end
       it "return product" do
-        expect(assigns(:products)).to eq ([product_1, product_2])
+        expect(assigns(:products)).to eq [product_1, product_2]
       end
     end
 
@@ -58,15 +60,16 @@ RSpec.describe ProductsController, type: :controller do
   end
 
   describe "GET /index" do
-    let!(:product_1) { FactoryBot.create :product}
-    let!(:product_2) { FactoryBot.create :product }
+    let!(:product_1) { FactoryBot.create :product, name: "Tra Sua", status: "enabled"}
+    let!(:product_2) { FactoryBot.create :product, name: "Tra Sua", status: "enabled" }
+    let!(:product_3) { FactoryBot.create :product, status: "enabled"}
     describe "index product" do
       before do
         get :index
       end
 
       it "return products" do
-        expect(assigns(:products)).to eq [product_2, product_1]
+        expect(assigns(:products)).to eq [product_3, product_2, product_1]
       end
 
       it "render :index product" do
@@ -76,11 +79,11 @@ RSpec.describe ProductsController, type: :controller do
     describe "search product" do
       context "when product exits" do
         before do
-          get :index, params: {name: product_1.name}
+          get :index, params: {name: "Tra Sua"}
         end
 
         it "return product_1" do
-          expect(assigns(:products)).to eq [product_1]
+          expect(assigns(:products)).to eq [product_2, product_1]
         end
 
         it "render static_pages/menu" do
