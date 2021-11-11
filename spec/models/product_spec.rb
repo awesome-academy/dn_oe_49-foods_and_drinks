@@ -39,15 +39,15 @@ RSpec.describe Product, type: :model do
         expect(Product.find_products_cart(product_3.id)).to eq [product_3]
       end
       it "return product has id fail" do
-        expect(Product.find_products_cart("")).to eq []
+        expect(Product.find_products_cart(Settings.option_fail)).to eq []
       end
     end
     context ".filter_category" do
       it "return product with category_id" do
-        expect(Product.find_products_cart(category_1.id)).to eq [product_1]
+        expect(Product.filter_category(category_1.id)).to eq [product_1]
       end
       it "return product with category_id fail" do
-        expect(Product.find_products_cart("")).to eq []
+        expect(Product.filter_category(Settings.option_fail)).to eq []
       end
     end
   end
@@ -88,16 +88,18 @@ RSpec.describe Product, type: :model do
 
       it { should allow_value(Settings.init_number).for(:price) }
 
-      it { should_not allow_value(Settings.price_fail).for(:price) }
+      it { should_not allow_value(Settings.option_fail).for(:price) }
 
     end
 
     context "field description" do
       it { is_expected.to validate_presence_of(:description) }
 
-      it { is_expected.to validate_length_of(:description).is_at_least(5) }
+      it { is_expected.to validate_length_of(:description)
+                          .is_at_least(Settings.length.min_5) }
 
-      it { is_expected.to validate_length_of(:description).is_at_most(250) }
+      it { is_expected.to validate_length_of(:description)
+                          .is_at_most(Settings.length.min_5) }
     end
 
     context "field quantity" do
@@ -107,7 +109,7 @@ RSpec.describe Product, type: :model do
 
       it { should allow_value(Settings.init_number).for(:quantity) }
 
-      it { should_not allow_value(Settings.price_fail).for(:quantity) }
+      it { should_not allow_value(Settings.option_fail).for(:quantity) }
     end
 
     # context "field images" do
