@@ -61,22 +61,6 @@ RSpec.describe OrdersController, type: :controller do
         expect(response).to render_template :show
       end
     end
-
-    context "when order not exist" do
-      before do
-        get :show, params: {
-          user_id: order.user.id,
-          id: Settings.option_fail
-        }
-      end
-
-      it "redirect to root_url" do
-        expect(response).to redirect_to root_url
-      end
-      it "display flash danger" do
-        expect(flash[:danger]).to eq I18n.t("orders.no_order")
-      end
-    end
   end
 
   describe "GET #new" do

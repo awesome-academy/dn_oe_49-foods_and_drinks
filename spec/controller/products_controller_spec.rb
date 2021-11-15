@@ -15,18 +15,6 @@ RSpec.describe ProductsController, type: :controller do
         expect(response).to render_template(:show)
       end
     end
-
-    context "when product not found" do
-      before do
-        get :show, params: {id: -1}
-      end
-      it "display flash danger when product not found" do
-        expect(flash[:danger]).to eq I18n.t("show_product_fail")
-      end
-      it "redirect root page when product not found" do
-        expect(response).to redirect_to root_url
-      end
-    end
   end
 
   describe "GET /filter" do

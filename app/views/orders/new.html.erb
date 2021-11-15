@@ -6,7 +6,9 @@
           <% flash.each do |message_type, message| %>
             <div class="alert alert-<%= message_type %>"><%= message %></div>
           <% end %>
-          <%= render "products_in_cart" %>
+          <% if can? :manager, Order %>
+            <%= render "products_in_cart" %>
+          <% end %>
         </div>
       </div>
     </div>

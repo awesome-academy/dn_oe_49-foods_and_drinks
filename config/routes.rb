@@ -33,7 +33,7 @@ Rails.application.routes.draw do
     get :order, to: "orders#new"
     get "/filter/:category_id", to: "products#filter", as: :filter
 
-    resources :users, only: %i(new create) do
+    resources :users, only: %i(new create show) do
       resources :orders, only: %i(index show) do
         put :cancel, on: :member
       end

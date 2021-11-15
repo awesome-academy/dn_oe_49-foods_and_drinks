@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
+  load_and_authorize_resource
   before_action :load_order, :load_order_details, only: %i(show cancel)
 
   def index

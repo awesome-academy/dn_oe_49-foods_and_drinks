@@ -1,0 +1,21 @@
+<div class="mt-5 mx-auto" >
+  <div class="row justify-content-center">
+    <aside class="col-md-2">
+      <section class="user_info">
+        <h3>
+          <div class="card card-inside" style="border-radius: 10px;">
+            <%= gravatar_for @user %>
+            <div class="card-body">
+              <h5 class="card-title">Name: <%= @user.name %><br/></h5>
+              <p class="card-text"><h5>Email: <%= @user.email %></h5></p>
+              <p><h6>
+                Created: <%= l @user.created_at, format: :long %><br/>
+                Updated: <%= l @user.updated_at, format: :long %></h6>
+              </p>
+            </div>
+          </div>
+        </h3>
+      </section>
+    </aside>
+  </div>
+</div>

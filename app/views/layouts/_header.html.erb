@@ -60,16 +60,19 @@
           <% end %>
           <ul class="dropdown-menu">
             <% if user_signed_in? %>
-              <li><%= link_to t("profile"), "#", class: "dropdown-item" %></li>
-              <li><%= link_to t("setting"), "#", class: "dropdown-item" %></li>
+              <li><%= link_to t("profile"), user_path(current_user), class: "dropdown-item" %></li>
+              <li><%= link_to t("setting"), edit_user_registration_path, class: "dropdown-item" %></li>
               <% if current_user.role? %>
                 <li>
                   <%= link_to t("dashboard"), admin_root_path, class: "dropdown-item" %>
                 </li>
+              <% else %>
+                <% if can? :manager, Order %>
+                  <li>
+                    <%= link_to t("orders.history_orders"), user_orders_path(current_user), class: "dropdown-item" %>
+                  </li>
+                <% end %>
               <% end %>
-              <li>
-                <%= link_to t("orders.history_orders"), user_orders_path(current_user), class: "dropdown-item" %>
-              </li>
               <li>
                 <%= button_to t("log_out"), signout_path, method: :delete, class: "dropdown-item" %>
               </li>
