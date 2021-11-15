@@ -1,4 +1,5 @@
 length:
+  digit_negative_1: -1
   min_5: 5
   min_8: 8
   max_100: 100
