@@ -3,6 +3,14 @@ class ApplicationController < ActionController::Base
   before_action :set_locale
   add_flash_types :info, :error, :warning
   before_action :initializ_session
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
+  protected
+
+  def configure_permitted_parameters
+    signup_attrs = [:name, :email, :password, :password_confirmation]
+    devise_parameter_sanitizer.permit(:sign_up, keys: signup_attrs)
+  end
 
   private
 
@@ -12,14 +20,6 @@ class ApplicationController < ActionController::Base
 
   def default_url_options
     {locale: I18n.locale}
-  end
-
-  def logged_in_user
-    return if logged_in?
-
-    store_location
-    flash[:danger] = t "please_login"
-    redirect_to login_url
   end
 
   def initializ_session

@@ -71,7 +71,7 @@ end
 phone = Faker::PhoneNumber.phone_number
 address = Faker::Address.full_address
 user = User.create!(name: "Admin",
-                   email: "admin@gmail.com",
+                   email: "admintest@gmail.com",
                    password: "123456789",
                    password_confirmation: "123456789",
                    status: true,

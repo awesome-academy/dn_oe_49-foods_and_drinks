@@ -94,13 +94,15 @@ en:
     log_in_unsuccess: "Log in unsuccess!"
     remember_me: "Remember Me"
     please_log_in: "Please Login!"
+    forgot_password: "Forgot password!"
   log_out: "Log Out"
   profile: "Profile"
   setting: "Setting"
   form:
     full_name: "Full Name"
     email: "E-mail"
-    password: "Password"
+    password_signin: "Password"
+    password_signup: "Password (Minimum 6 characters)"
     password_confirmation: "Confirm Password"
   message_user_nil: "Account does not exist!"
   orders:
