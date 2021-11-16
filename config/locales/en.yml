@@ -210,6 +210,7 @@ en:
     msg_import_success: "Products imported."
     msg_import_failer: "Wrong format."
     msg_create_success: "Create Successfully"
+    msg_create_fail: "Create Failed"
     msg_create_fail: "Category Incorrect"
     msg_show_failer: "Product Not Found."
     msg_delete_success: "Product deleted"

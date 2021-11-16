@@ -210,6 +210,7 @@ vi:
     msg_import_success: "Thêm Sản Phẩm Thành Công."
     msg_import_failer: "Sai định dạng."
     msg_create_success: "Tạo Sản Phẩm Thành Công."
+    msg_create_fail: "Tạo Sản Phẩm Không Thành Công."
     msg_create_fail: "Danh mục không chính xác."
     msg_show_failer: "Không Tìm Thấy Sản Phẩm."
     msg_delete_success: "Sản phẩm đã bị xóa"

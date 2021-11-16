@@ -4,14 +4,14 @@ include ProductsHelper
 RSpec.describe StaticPagesController, type: :controller do
   describe "GET /home" do
     context "when products.size <=8 " do
-      let!(:product_1) { FactoryBot.create :product}
-      let!(:product_2) { FactoryBot.create :product}
-      let!(:product_3) { FactoryBot.create :product, status: "disabled"}
+      let!(:product_1) { FactoryBot.create :product, status: "enabled"}
+      let!(:product_2) { FactoryBot.create :product, status: "enabled"}
+      let!(:product_3) { FactoryBot.create :product}
       before do
         get :home
       end
       it "return products" do
-        expect(assigns(:products)).to eq [product_2, product_1]
+        expect(assigns(:products)).to eq ([product_2, product_1])
       end
       it "render template home" do
         expect(response).to render_template :home

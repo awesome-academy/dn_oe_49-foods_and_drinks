@@ -55,6 +55,7 @@ class Admin::ProductsController < Admin::AdminsController
       flash[:info] = t "product_controller.msg_create_success"
       redirect_to admin_product_path(@product)
     else
+      flash[:danger] = t "product_controller.msg_create_fail"
       render :new
     end
   end
