@@ -37,3 +37,4 @@ show_10: 10
 show_5: 5
 init_number: 0
 option_fail: -1
+option_1: 1
