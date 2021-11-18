@@ -9,6 +9,7 @@ gem "bootsnap", ">= 1.4.4", require: false
 gem "bootstrap", "~> 4.1.0"
 gem "bootstrap-kaminari-views", "~> 0.0.5"
 gem "bootstrap-sass", "3.4.1"
+gem "cancancan"
 gem "config"
 gem "devise"
 gem "execjs"

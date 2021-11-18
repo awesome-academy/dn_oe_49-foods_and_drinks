@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   before_action :load_product, only: :show
   before_action :categories_select_id_name, only: %i(index filter)
+  authorize_resource
 
   def index
     @products = Product.enabled

@@ -287,6 +287,7 @@ vi:
   cart: "Giỏ Hàng"
   my_cart: "Giỏ Hàng Của Tôi"
   cart_empty: "Không có sản phẩm trong giỏ hàng!"
+  record_not_found: "Không tìm thấy!"
   devise:
     confirmations:
       confirmed: "Địa chỉ email của bạn đã được xác nhận thành công."

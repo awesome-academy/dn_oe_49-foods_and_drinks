@@ -287,4 +287,4 @@ en:
   cart: "Cart"
   my_cart: "My Cart"
   cart_empty: "There are no products in the cart!"
-
+  record_not_found: "Record not found!"

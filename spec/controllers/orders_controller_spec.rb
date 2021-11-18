@@ -138,10 +138,10 @@ RSpec.describe OrdersController, type: :controller do
         put :cancel, params: {user_id: order.user.id, id: order.id }
       end
       it "show flash danger" do
-        expect(flash[:danger]).to eq I18n.t("orders.update_fail")
+        expect(flash[:danger]).to eq I18n.t("not_permission")
       end
       it "redirect to the root_url" do
-        expect(response).to redirect_to user_order_path
+        expect(response).to redirect_to root_path
       end
     end
   end

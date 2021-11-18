@@ -33,7 +33,7 @@
               </tr>
             </table>
             <div class="col-md-3 text-right">
-              <% if @order.open? %>
+              <% if can? :cancel, @order %>
                 <%= link_to cancel_user_order_path(current_user, @order),
                     method: :put, data: { confirm: t("you_sure") } do
                 %>

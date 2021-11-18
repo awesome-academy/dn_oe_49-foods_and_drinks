@@ -6,6 +6,9 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
+  rescue_from CanCan::AccessDenied, with: :access_denied
+
   private
 
   def set_locale
@@ -22,6 +25,16 @@ class ApplicationController < ActionController::Base
 
   def categories_select_id_name
     @categories = Category.select(:id, :name)
+  end
+
+  def access_denied
+    flash[:danger] = t "not_permission"
+    redirect_to root_url
+  end
+
+  def record_not_found
+    flash[:danger] = t "record_not_found"
+    redirect_to root_url
   end
 
   protected
