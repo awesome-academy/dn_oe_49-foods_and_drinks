@@ -94,13 +94,15 @@ vi:
     log_in_unsuccess: "Đăng nhập không thành công!"
     remember_me: "Ghi Nhớ Tôi"
     please_log_in: "Vui Lòng Đăng Nhập!"
+    forgot_password: "Quên Mật Khẩu!"
   log_out: "Đăng Xuất"
   profile: "Hồ Sơ"
   setting: "Cài Đặt"
   form:
     full_name: "Tên đầy đủ"
     email: "E-mail"
-    password: "Mật Khẩu"
+    password_signin: "Mật Khẩu"
+    password_signup: "Mật Khẩu (6 kí tự tối thiểu)"
     password_confirmation: "Xác Nhận Mật Khẩu"
   message_user_nil: "Tài khoản không tồn tại!"
   orders:

@@ -5,7 +5,7 @@ RSpec.describe Admin::ProductsController, type: :controller do
     context "when user login is admin" do
       before do
         @user = FactoryBot.create :user, role: 1
-        log_in @user
+        sign_in @user
       end
       context "asset method index" do
         let!(:product_1) { FactoryBot.create :product}
@@ -25,7 +25,7 @@ RSpec.describe Admin::ProductsController, type: :controller do
     context "when user login isn't admin" do
       before do
         @user = FactoryBot.create :user
-        log_in @user
+        sign_in @user
       end
       context "asset method index" do
         before { get :index }
@@ -37,10 +37,10 @@ RSpec.describe Admin::ProductsController, type: :controller do
 
     context "when user not login" do
       before do
-        get :index
+        get :index, params: {locale: "vi"}
       end
       it "redirects to login" do
-        expect(response).to redirect_to login_path
+        expect(response).to redirect_to new_user_session_url
       end
     end
   end
@@ -49,7 +49,7 @@ RSpec.describe Admin::ProductsController, type: :controller do
     context "when user login is admin" do
       before do
         @user = FactoryBot.create :user, role: 1
-        log_in @user
+        sign_in @user
       end
       context "when product exist" do
         let!(:product_1) { FactoryBot.create :product}
@@ -83,7 +83,7 @@ RSpec.describe Admin::ProductsController, type: :controller do
     context "when user login is not admin" do
       before do
         @user = FactoryBot.create :user
-        log_in @user
+        sign_in @user
       end
       context "asset method show" do
         let!(:product_1) { FactoryBot.create :product}
@@ -99,10 +99,10 @@ RSpec.describe Admin::ProductsController, type: :controller do
     context "when user not login" do
       let!(:product_1) { FactoryBot.create :product}
       before do
-        get :show, params: {id: product_1.id}
+        get :show, params: {locale: "vi", id: product_1.id}
       end
       it "redirects to login" do
-        expect(response).to redirect_to login_path
+        expect(response).to redirect_to new_user_session_url
       end
     end
   end
@@ -111,7 +111,7 @@ RSpec.describe Admin::ProductsController, type: :controller do
     context "when user login is admin" do
       before do
         @user = FactoryBot.create :user, role: 1
-        log_in @user
+        sign_in @user
       end
       context "asset method new" do
         before { get :new }
@@ -123,7 +123,7 @@ RSpec.describe Admin::ProductsController, type: :controller do
     context "when user login is not admin" do
       before do
         @user = FactoryBot.create :user
-        log_in @user
+        sign_in @user
       end
       context "asset method new" do
         before { get :new }
@@ -134,9 +134,11 @@ RSpec.describe Admin::ProductsController, type: :controller do
     end
 
     context "when user not login" do
-      before { get :new }
+      before do
+        get :new, params: {locale: "vi"}
+      end
       it "redirects to login" do
-        expect(response).to redirect_to login_path
+        expect(response).to redirect_to new_user_session_url
       end
     end
   end
@@ -145,7 +147,7 @@ RSpec.describe Admin::ProductsController, type: :controller do
     context "when user login is admin" do
       before do
         @user = FactoryBot.create :user, role: 1
-        log_in @user
+        sign_in @user
       end
       context "when product exist" do
         let!(:product_1) { FactoryBot.create :product}
@@ -179,7 +181,7 @@ RSpec.describe Admin::ProductsController, type: :controller do
     context "when user login is not admin" do
       before do
         @user = FactoryBot.create :user
-        log_in @user
+        sign_in @user
       end
       context "asset method edit" do
         let!(:product_1) { FactoryBot.create :product}
@@ -195,10 +197,10 @@ RSpec.describe Admin::ProductsController, type: :controller do
     context "when user not login" do
       let!(:product_1) { FactoryBot.create :product}
       before do
-        get :edit, params: {id: product_1.id}
+        get :edit, params: {locale: "vi", id: product_1.id}
       end
       it "redirects to login" do
-        expect(response).to redirect_to login_path
+        expect(response).to redirect_to new_user_session_url
       end
     end
   end
@@ -207,7 +209,7 @@ RSpec.describe Admin::ProductsController, type: :controller do
     context "when user login is admin" do
       before do
         @user = FactoryBot.create :user, role: 1
-        log_in @user
+        sign_in @user
       end
       context "success when valid attributes" do
         before do
@@ -270,7 +272,7 @@ RSpec.describe Admin::ProductsController, type: :controller do
     context "when user login is not admin" do
       before do
         @user = FactoryBot.create :user
-        log_in @user
+        sign_in @user
       end
       context "asset method update" do
         before do
@@ -286,10 +288,10 @@ RSpec.describe Admin::ProductsController, type: :controller do
     context "when user not login" do
       before do
         @product = FactoryBot.create :product
-        put :update, params: { id: @product.id }
+        put :update, params: {locale: "vi", id: @product.id }
       end
       it "redirects to login" do
-        expect(response).to redirect_to login_path
+        expect(response).to redirect_to new_user_session_url
       end
     end
   end
@@ -298,7 +300,7 @@ RSpec.describe Admin::ProductsController, type: :controller do
     context "when user login is admin" do
       before do
         @user = FactoryBot.create :user, role: 1
-        log_in @user
+        sign_in @user
       end
       context "when valid strong params" do
         let!(:category_1) { FactoryBot.create :category }
@@ -339,7 +341,7 @@ RSpec.describe Admin::ProductsController, type: :controller do
     context "when user login is not admin" do
       before do
         @user = FactoryBot.create :user
-        log_in @user
+        sign_in @user
       end
       context "asset method update" do
         before do
@@ -353,10 +355,10 @@ RSpec.describe Admin::ProductsController, type: :controller do
 
     context "when user not login" do
       before do
-        post :create
+        post :create, params: {locale: "vi"}
       end
       it "redirects to login" do
-        expect(response).to redirect_to login_path
+        expect(response).to redirect_to new_user_session_url
       end
     end
   end
@@ -365,7 +367,7 @@ RSpec.describe Admin::ProductsController, type: :controller do
     context "when user login is admin" do
       before do
         @user = FactoryBot.create :user, role: 1
-        log_in @user
+        sign_in @user
       end
       context "when product exist" do
         let!(:product_1) { FactoryBot.create :product}
@@ -447,7 +449,7 @@ RSpec.describe Admin::ProductsController, type: :controller do
     context "when user login is not admin" do
       before do
         @user = FactoryBot.create :user
-        log_in @user
+        sign_in @user
       end
       context "asset method update" do
         before do
@@ -463,10 +465,10 @@ RSpec.describe Admin::ProductsController, type: :controller do
     context "when user not login" do
       before do
         @product = FactoryBot.create :product
-        delete :destroy, params: {id: @product.id}
+        delete :destroy, params: {locale: "vi", id: @product.id}
       end
       it "redirects to login" do
-        expect(response).to redirect_to login_path
+        expect(response).to redirect_to new_user_session_url
       end
     end
   end

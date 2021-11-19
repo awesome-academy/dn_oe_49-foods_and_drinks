@@ -1,0 +1,24 @@
+<%= stylesheet_link_tag "signup_signin", media: "all", "data-turbolinks-track": true %>
+<div id="login-box">
+  <div class="left">
+    <h1 class="title"><%= t "devise.forgot_pass.title" %></h1>
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+
+      <div class="actions field">
+        <%= f.submit t("devise.forgot_pass.button") %>
+      </div>
+    <% end %>
+  </div>
+  <div class="right">
+    <span class="loginwith"><%= t "sign_up.sign_in_with_social_network" %></span>
+    <button class="social-signin facebook"><%= t "sign_up.log_in_with_facebook" %></button>
+    <button class="social-signin google"><%= t "sign_up.log_in_with_google" %></button>
+  </div>
+</div>
+<%= render "devise/shared/links" %>

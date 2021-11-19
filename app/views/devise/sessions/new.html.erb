@@ -1,0 +1,42 @@
+<%= stylesheet_link_tag "signup_signin", media: "all", "data-turbolinks-track": true %>
+<div id="login-box">
+  <div class="left">
+    <h1 class="title"><%= t "log_in.log_in" %></h1>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="field">
+        <%= f.email_field :email, class: "text", placeholder: t("form.email"),
+                          autofocus: true, autocomplete: "email" %>
+      </div>
+      <div class="field">
+        <%= f.password_field :password, class: "password",
+                             placeholder: t("form.password_signin"),
+                             autocomplete: "current-password"  %>
+      </div>
+      <% if devise_mapping.rememberable? %>
+        <div class="field">
+          <%= f.label :remember_me, class: "checkbox inline" do %>
+            <%= f.check_box :remember_me %>
+            <span><%= t("log_in.remember_me") %></span>
+          <% end %>
+        </div>
+      <% end %>
+      <div class="field">
+        <%= f.submit t("log_in.log_in").upcase, class: "btn btn-primary" %>
+      </div>
+    <% end %>
+    <p class="forgot-pass">
+      <%= link_to t("log_in.forgot_password"), new_user_password_path, class: "forgot" %>
+    </p>
+    <p>
+      <%= t "log_in.new_user" %>
+      <%= link_to t("log_in.sign_up_now"), new_user_registration_path %>
+    </p>
+  </div>
+  <div class="right">
+    <span class="loginwith"><%= t "sign_up.sign_in_with_social_network" %></span>
+    <button class="social-signin facebook"><%= t "sign_up.log_in_with_facebook" %></button>
+    <button class="social-signin google"><%= t "sign_up.log_in_with_google" %></button>
+  </div>
+</div>
+
+

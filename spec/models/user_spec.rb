@@ -51,21 +51,11 @@ RSpec.describe User, type: :model do
         subject.password = nil
         is_expected.to_not be_valid
       end
-
-      it { is_expected.to validate_length_of(:password)
-                      .is_at_least(Settings.length.min_8) }
-
-      it { is_expected.to validate_length_of(:password)
-                      .is_at_most(Settings.length.max_100) }
     end
   end
 
   describe "methods" do
     let(:user){FactoryBot.create :user}
-
-    it "forget user" do
-      expect(user.forget).to eq true
-    end
 
     context ".recent_orders" do
       let!(:order_1){FactoryBot.create :order, user_id: user.id}

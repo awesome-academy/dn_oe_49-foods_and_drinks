@@ -18,15 +18,18 @@ Rails.application.routes.draw do
       end
     end
 
+    devise_for :users
+    as :user do
+      get "/signin" => "devise/sessions#new"
+      post "/signin" => "devise/sessions#create"
+      delete "/signout" => "devise/sessions#destroy"
+    end
     root "static_pages#home"
     get :home, to: "static_pages#home"
     get :menu, to: "products#index"
     get :about, to: "static_pages#about"
     get :blog, to: "static_pages#blog"
     get :contact, to: "static_pages#contact"
-    get :login, to: "sessions#new"
-    post :login, to: "sessions#create"
-    delete :logout, to: "sessions#destroy"
     get :order, to: "orders#new"
     get "/filter/:category_id", to: "products#filter", as: :filter
 
