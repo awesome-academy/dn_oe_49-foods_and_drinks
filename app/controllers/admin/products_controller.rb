@@ -1,4 +1,5 @@
 class Admin::ProductsController < Admin::AdminsController
+  load_and_authorize_resource
   before_action :load_product,
                 only: %i(show edit update purge_thumbnail destroy)
   before_action :load_order_details_with_product_id, only: :destroy

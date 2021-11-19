@@ -1,4 +1,6 @@
-<%= form_tag menu_path, method: :get do %>
-  <%= text_field_tag :name, nil, placeholder: t("menu_page.search_name_product") %>
-  <%= submit_tag t("menu_page.search"), class: "btn-outline-success" %>
+<% if can? :filter, Product %>
+  <%= form_tag menu_path, method: :get do %>
+    <%= text_field_tag :name, nil, placeholder: t("menu_page.search_name_product") %>
+    <%= submit_tag t("menu_page.search"), class: "btn-outline-success" %>
+  <% end %>
 <% end %>

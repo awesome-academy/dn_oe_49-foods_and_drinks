@@ -45,8 +45,10 @@
       <td class="td-body-show"><%= @product.status %></td>
       <td class="td-body-show"><%= @product.category_name %></td>
       <td>
-        <%= link_to t("page_show_product_admin.edit"), edit_admin_product_path(@product),
-          class: "btn btn-success td-action-body-show" %>
+        <% if can? :manager, Product %>
+          <%= link_to t("page_show_product_admin.edit"), edit_admin_product_path(@product),
+            class: "btn btn-success td-action-body-show" %>
+        <% end %>
       </td>
       <td>
         <%= button_to t("page_show_product_admin.delete"), admin_product_path(@product),

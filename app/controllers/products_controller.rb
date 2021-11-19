@@ -1,10 +1,10 @@
 class ProductsController < ApplicationController
+  load_and_authorize_resource
   before_action :load_product, only: :show
   before_action :categories_select_id_name, only: %i(index filter)
 
   def index
-    @products = Product.enabled
-                       .find_name(params[:name])
+    @products = Product.find_name(params[:name])
 
     if @products.empty?
       @products = Product

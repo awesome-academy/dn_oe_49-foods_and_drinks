@@ -103,17 +103,19 @@
     </div>
   </div>
   <div class="container">
-    <% if @products.any? %>
-      <div class="row">
-        <%= render @products %>
-        <div class="col-md-12 heading-section text-center ftco-animate">
-          <%= link_to t("home_page.see_all"), menu_path, class: "mb-4" %>
+    <% if can? :read, Product %>
+      <% if @products.any? %>
+        <div class="row">
+          <%= render @products %>
+          <div class="col-md-12 heading-section text-center ftco-animate">
+            <%= link_to t("home_page.see_all"), menu_path, class: "mb-4" %>
+          </div>
         </div>
-      </div>
-    <% else %>
-      <div class="row justify-content-center alert alert-danger">
-        <h4 class="mb-4"><%= t("home_page.our_products_nil") %></h4>
-      </div>
+      <% else %>
+        <div class="row justify-content-center alert alert-danger">
+          <h4 class="mb-4"><%= t("home_page.our_products_nil") %></h4>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </section>

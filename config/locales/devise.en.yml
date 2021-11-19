@@ -67,6 +67,18 @@ en:
       confirm_new_pass: "Confirm new password"
       submit_change: "Change"
       length_pass: "6 characters minimum"
+    edit_user:
+      title: "Edit"
+      holder_pass: "Password"
+      holder_pass_confirm: "Password Confirmation"
+      holder_current_pass: "Current Password"
+      update: "Update"
+      cancel: "Cancel"
+    password: "Password (6 characters minimum)"
+    password_confirmation: "Password Confirmation"
+    name: "Name"
+    current_pass: "Current Password"
+    not_record: "Not found record"
   errors:
     messages:
       already_confirmed: "was already confirmed, please try signing in"

@@ -64,20 +64,6 @@ RSpec.describe Admin::ProductsController, type: :controller do
           expect(response).to render_template(:show)
         end
       end
-
-      context "when product not exist" do
-        let!(:product_1) { FactoryBot.create :product}
-        before do
-          get :show, params: {id: -1}
-        end
-        it "display flash danger" do
-          expect(flash[:danger]).to eq I18n.t("product_controller.msg_show_failer")
-        end
-
-        it "redirect_to admin_products_path" do
-          expect(response).to redirect_to admin_products_path
-        end
-      end
     end
 
     context "when user login is not admin" do
@@ -162,20 +148,6 @@ RSpec.describe Admin::ProductsController, type: :controller do
           expect(response).to render_template(:edit)
         end
       end
-
-      context "when product not exist" do
-        let!(:product_1) { FactoryBot.create :product}
-        before do
-          get :edit, params: {id: -1}
-        end
-        it "display flash danger" do
-          expect(flash[:danger]).to eq I18n.t("product_controller.msg_show_failer")
-        end
-
-        it "redirect_to admin_products_path" do
-          expect(response).to redirect_to admin_products_path
-        end
-      end
     end
 
     context "when user login is not admin" do
@@ -249,24 +221,6 @@ RSpec.describe Admin::ProductsController, type: :controller do
           expect(response).to render_template :edit
         end
       end
-
-      context "fail when id product not found" do
-        before do
-          @product = FactoryBot.create :product
-          put :update, params: {
-            product: {name: "ThangNT"},
-            id: -1
-          }
-          @product.reload
-        end
-        it "display flash danger" do
-          expect(flash[:danger]).to eq I18n.t("product_controller.msg_show_failer")
-        end
-
-        it "redirect_to admin_products_path" do
-          expect(response).to redirect_to admin_products_path
-        end
-      end
     end
 
     context "when user login is not admin" do
@@ -319,7 +273,7 @@ RSpec.describe Admin::ProductsController, type: :controller do
         end
 
         it "redirect to the admin_product_path" do
-          expect(response).to redirect_to admin_product_url(29)
+          expect(response).to redirect_to admin_product_url(23)
         end
       end
 
@@ -407,10 +361,6 @@ RSpec.describe Admin::ProductsController, type: :controller do
               @product_2 = FactoryBot.create :product, status: "disabled"
             end
 
-            # it "display flash danger" do
-            #   expect(flash[:danger]).to eq I18n.t("product_controller.msg_no_delete")
-            # end
-
             it "redirect to admin products" do
               expect(response).to redirect_to admin_products_path
             end
@@ -429,19 +379,6 @@ RSpec.describe Admin::ProductsController, type: :controller do
 
         it "display flash success" do
           expect(flash[:success]).to eq I18n.t("product_controller.msg_delete_success")
-        end
-      end
-
-      context "when product not exist" do
-        before do
-          delete :destroy, params: {id: -1}
-        end
-        it "display flash danger" do
-          expect(flash[:danger]).to eq I18n.t("product_controller.msg_show_failer")
-        end
-
-        it "redirect_to admin_products_path" do
-          expect(response).to redirect_to admin_products_path
         end
       end
     end

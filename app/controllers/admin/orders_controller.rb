@@ -1,4 +1,5 @@
 class Admin::OrdersController < Admin::AdminsController
+  load_and_authorize_resource
   before_action :load_order, :load_order_details,
                 except: %i(index index_by_status)
   before_action :check_quantity_product, only: :approve
