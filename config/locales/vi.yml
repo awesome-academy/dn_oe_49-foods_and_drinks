@@ -93,7 +93,7 @@ vi:
     invalid_email_or_password: "Email hoặc mật khẩu không hợp lệ!"
     log_in_unsuccess: "Đăng nhập không thành công!"
     remember_me: "Ghi Nhớ Tôi"
-    please_log_in: "Vui Lòng Đăng Nhập!"
+    please_log_in: "Vui lòng đăng nhập!"
   log_out: "Đăng Xuất"
   profile: "Hồ Sơ"
   setting: "Cài Đặt"
