@@ -1,6 +1,6 @@
 # Fake accounts and address
 10.times do |n|
-  name = Faker::Name.unique.name
+  name = Faker::Name.name
   email = "example-#{rand(252...4350)}@test-example.com"
   password = "password123"
   phone = Faker::PhoneNumber.phone_number

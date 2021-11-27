@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :product do
-    name{Faker::Food.fruits}
+    name{Faker::Food.fruits + " fruit"}
     price{200000}
     description{Faker::Food.description}
     quantity{10}

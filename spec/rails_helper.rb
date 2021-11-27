@@ -23,6 +23,8 @@ RSpec.configure do |config|
 
   config.filter_rails_from_backtrace!
 
+  config.include Devise::Test::ControllerHelpers, type: :controller
+
   config.before(:suite) do
     DatabaseCleaner.strategy = :truncation
   end

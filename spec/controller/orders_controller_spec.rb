@@ -1,5 +1,4 @@
 require "rails_helper"
-include SessionsHelper
 
 RSpec.describe OrdersController, type: :controller do
   let(:user) {FactoryBot.create :user}
@@ -8,7 +7,7 @@ RSpec.describe OrdersController, type: :controller do
     context "when user logged in" do
       let!(:order) {FactoryBot.create :order}
       before do
-        log_in order.user
+        sign_in order.user
         @orders = order.user.all_orders
         get :index, params: {user_id: order.user.id}
       end
@@ -21,27 +20,13 @@ RSpec.describe OrdersController, type: :controller do
         expect(response).to render_template(:index)
       end
     end
-
-    context "when user unlogged" do
-      before do
-        get :index, params: {user_id: user.id}
-      end
-
-      it "return flash danger" do
-        expect(flash[:danger]).to eq I18n.t("log_in.please_log_in")
-      end
-
-      it "redirect to login_url" do
-        expect(response).to redirect_to login_url
-      end
-    end
   end
 
   describe "GET #new" do
     before do
-      log_in user
+      sign_in user
       session[:cart] = {}
-      get :new, params: {user_id: user.id}
+      get :new, params: {locale: "vi", user_id: user.id}
     end
 
     context "when cart empty" do
@@ -59,7 +44,7 @@ RSpec.describe OrdersController, type: :controller do
       before do
         session[:cart][product.id.to_s] = 5
         @carts = Product.find_products_cart(session[:cart].keys)
-        get :new
+        get :new, params: {locale: "vi"}
       end
 
       it "assigns @carts" do
@@ -75,7 +60,7 @@ RSpec.describe OrdersController, type: :controller do
   describe "POST #create" do
     let!(:product) {FactoryBot.create :product}
     before do
-      log_in user
+      sign_in user
       session[:cart] = {}
     end
 
@@ -117,31 +102,12 @@ RSpec.describe OrdersController, type: :controller do
         expect(response).to redirect_to user_orders_path(user)
       end
     end
-
-    # context "when save database fail" do
-    #   before do
-    #     session[:cart][product.id.to_s] = 5
-    #     @carts = Product.find_products_cart(session[:cart].keys)
-    #     post :create, params: {
-    #       user_id: user.id,
-    #       address: "kim_11 Nguyen Van Linh_123"
-    #     }
-    #   end
-
-    #   it "return flash danger" do
-    #     expect(flash(:danger)).to eq I18n.t("orders.order_fail")
-    #   end
-
-    #   it "redirect to" do
-    #     expect(response).to redirect_to user_orders_path(user)
-    #   end
-    # end
   end
 
   describe "GET #show" do
     let!(:order) {FactoryBot.create :order, user_id: user.id}
     before do
-      log_in order.user
+      sign_in order.user
     end
 
     context "when order exist" do
@@ -193,7 +159,7 @@ RSpec.describe OrdersController, type: :controller do
     let!(:order) {FactoryBot.create :order, status: :open, user_id: user.id}
 
     before do
-      log_in order.user
+      sign_in order.user
     end
 
     context "when order with status is open" do

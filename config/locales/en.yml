@@ -86,6 +86,7 @@ en:
     log_in_with_google: "Log in with Google+"
     message_sign_up_success: "Sign Up Success!"
     message_sign_up_fail: "Sign Up Fail!"
+    characters_minimum: "characters minimum"
   log_in:
     log_in: "Log In"
     sign_up_now: "Sign Up Now!"
@@ -94,6 +95,7 @@ en:
     log_in_unsuccess: "Log in unsuccess!"
     remember_me: "Remember Me"
     please_log_in: "Please Login!"
+    forgot_password: "Forgot your password?"
   log_out: "Log Out"
   profile: "Profile"
   setting: "Setting"

@@ -86,6 +86,7 @@ vi:
     log_in_with_google: "Đăng nhập bằng Google+"
     message_sign_up_success: "Đăng Ký Thành Công!"
     message_sign_up_fail: "Đăng Ký Không Thành Công!"
+    characters_minimum: "ký tự tối thiểu"
   log_in:
     log_in: "Đăng Nhập"
     sign_up_now: "Đăng Ký Ngay!"
@@ -94,6 +95,7 @@ vi:
     log_in_unsuccess: "Đăng nhập không thành công!"
     remember_me: "Ghi Nhớ Tôi"
     please_log_in: "Vui lòng đăng nhập!"
+    forgot_password: "Quên mật khẩu?"
   log_out: "Đăng Xuất"
   profile: "Hồ Sơ"
   setting: "Cài Đặt"
