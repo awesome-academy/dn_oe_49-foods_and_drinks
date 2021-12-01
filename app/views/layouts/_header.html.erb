@@ -61,7 +61,7 @@
           <ul class="dropdown-menu">
             <% if user_signed_in? %>
               <li><%= link_to t("profile"), "#", class: "dropdown-item" %></li>
-              <li><%= link_to t("setting"), "#", class: "dropdown-item" %></li>
+              <li><%= link_to t("setting"), edit_user_registration_path, class: "dropdown-item" %></li>
               <% if current_user.role? %>
                 <li>
                   <%= link_to t("dashboard"), admin_root_path, class: "dropdown-item" %>

@@ -106,3 +106,14 @@ input[type=password] {
   color: $green;
   padding: 4px 12px;
 }
+
+#form-container {
+  position: relative;
+  margin: 3% auto;
+  padding: 3em;
+  width: 50em;
+  height: auto;
+  background: #FFF;
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}

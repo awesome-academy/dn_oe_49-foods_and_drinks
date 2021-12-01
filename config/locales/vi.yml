@@ -277,3 +277,22 @@ vi:
   cart: "Giỏ Hàng"
   my_cart: "Giỏ Hàng Của Tôi"
   cart_empty: "Không có sản phẩm trong giỏ hàng!"
+  devise:
+    passwords:
+      edit: "Chỉnh sửa"
+      leave_blank: "để trống nếu bạn không muốn thay đổi nó"
+      current_password: "Mật khẩu hiện tại"
+      confirm_your_changes: "chúng tôi cần mật khẩu hiện tại của bạn để xác nhận các thay đổi của bạn"
+      update: "Cập nhật"
+      unhappy: "Không vui"
+      cancel_account: "Hủy tài khoản của tôi"
+      back: "Trở lại"
+      notify_has_change_password: "Chúng tôi đang liên hệ với bạn để thông báo rằng mật khẩu của bạn đã được thay đổi."
+    mail:
+      hello: "Xin chào"
+      requested_change_password: "Ai đó đã yêu cầu một liên kết để thay đổi mật khẩu của bạn. Bạn có thể làm điều này thông qua liên kết dưới đây."
+      change_my_password: "Thay đổi mật khẩu của tôi"
+      ignore_email: "Nếu bạn không yêu cầu điều này, vui lòng bỏ qua email này."
+      password_wont_change: "Mật khẩu của bạn sẽ không thay đổi cho đến khi bạn truy cập vào liên kết ở trên và tạo một mật khẩu mới."
+      notify_being_change_email: "Chúng tôi đang liên hệ với bạn để thông báo rằng email của bạn đang được thay đổi thành"
+      notify_has_change_email: "Chúng tôi đang liên hệ với bạn để thông báo rằng email của bạn đã được thay đổi thành"

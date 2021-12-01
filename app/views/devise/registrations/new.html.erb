@@ -12,10 +12,10 @@
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "text", placeholder: t("form.email") %>
       <%= show_message_for_field(@user, :email) %>
 
+      <%= f.password_field :password, autocomplete: "new-password", class: "password", placeholder: t("form.password") %>
       <% if @minimum_password_length %>
         <em>(<%= @minimum_password_length %> <%= t "sign_up.characters_minimum" %>)</em>
       <% end %><br />
-      <%= f.password_field :password, autocomplete: "new-password", class: "password", placeholder: t("form.password") %>
       <%= show_message_for_field(@user, :password) %>
 
       <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "password", placeholder: t("form.password_confirmation") %>

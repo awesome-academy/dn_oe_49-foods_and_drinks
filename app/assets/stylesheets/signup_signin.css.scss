@@ -53,7 +53,7 @@ h1 {
 
 .text:focus,
 .password:focus {
-  border-bottom: 2px solid #16a085;
+  border-bottom: 2px solid $dark_green;
   color: $dark_green;
   transition: 0.2s ease;
 }
@@ -62,7 +62,7 @@ input[type="submit"] {
   margin-top: 10px;
   width: 120px;
   height: 32px;
-  background: #16a085;
+  background: $dark_green;
   border: none;
   border-radius: 2px;
   color: $black;
