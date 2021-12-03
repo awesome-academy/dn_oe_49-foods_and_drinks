@@ -1,24 +1,17 @@
+@import 'color';
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
 *:focus {
   outline: none;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  background: #DDD;
-  font-size: 16px;
-  color: #222;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
-}
 
 #login-box {
   position: relative;
-  margin: 5% auto;
+  margin: 3% auto;
+  padding: 3em;
   width: 50em;
   height: 33em;
-  background: #FFF;
+  background: $white;
   border-radius: 2px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
@@ -33,7 +26,7 @@ body {
 }
 
 .alert-danger {
-  color: red;
+  color: $red;
   margin-bottom: 20px;
 }
 
@@ -60,8 +53,8 @@ h1 {
 
 .text:focus,
 .password:focus {
-  border-bottom: 2px solid #16a085;
-  color: #16a085;
+  border-bottom: 2px solid $dark_green;
+  color: $dark_green;
   transition: 0.2s ease;
 }
 
@@ -69,10 +62,10 @@ input[type="submit"] {
   margin-top: 10px;
   width: 120px;
   height: 32px;
-  background: #16a085;
+  background: $dark_green;
   border: none;
   border-radius: 2px;
-  color: #FFF;
+  color: $black;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   text-transform: uppercase;
@@ -111,7 +104,7 @@ input[type="submit"]:active {
   display: block;
   margin-bottom: 40px;
   font-size: 28px;
-  color: #fff;
+  color: $white;
   text-align: center;
 }
 
@@ -121,7 +114,7 @@ button.social-signin {
   height: 36px;
   border: none;
   border-radius: 2px;
-  color: #FFF;
+  color: $white;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   transition: 0.2s ease;
@@ -153,7 +146,7 @@ button.social-signin.google {
 
 .error-danger, .error {
   font-size: 14px;
-  color: red;
+  color: $red;
   padding: 4px;
 }
 
@@ -161,16 +154,6 @@ ul.error {
   list-style-type: none;
   padding: 5px;
   margin: 0;
-}
-
-#error_explanation {
-  font-size: 15px;
-}
-
-.error-success {
-  font-size: 14px;
-  color: #d1e7dd;
-  padding: 4px;
 }
 
 .checkbox {

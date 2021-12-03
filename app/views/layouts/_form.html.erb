@@ -1,11 +1,16 @@
-<%= form_for(@user) do |f| %>
-  <%= f.text_field :name, class: "text", placeholder: t("form.full_name") %>
-  <%= show_message_for_field(@user, :name) %>
-  <%= f.email_field :email, class: "text", placeholder: t("form.email") %>
-  <%= show_message_for_field(@user, :email) %>
-  <%= f.password_field :password, class: "password", placeholder: t("form.password") %>
-  <%= show_message_for_field(@user, :password) %>
-  <%= f.password_field :password_confirmation, class: "password", placeholder: t("form.password_confirmation") %>
-  <%= show_message_for_field(@user, :password_confirmation) %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "text", placeholder: t("form.full_name") %>
+
+  <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "text", placeholder: t("form.email") %>
+
+  <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+  <% end %><br />
+  <%= f.password_field :password, autocomplete: "new-password", class: "password", placeholder: t("form.password") %>
+
+  <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "password", placeholder: t("form.password_confirmation") %>
+
   <%= f.submit t("sign_up.sign_up").upcase, class: "btn btn-primary" %>
 <% end %>

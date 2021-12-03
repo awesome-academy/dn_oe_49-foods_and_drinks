@@ -28,7 +28,14 @@
 
   <body>
     <%= render "layouts/header" %>
-
+    <% if !alert.nil? || !notice.nil? %>
+      <div class="container">
+        <div class="notice-alert">
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+        </div>
+      </div>
+    <% end %>
     <%= yield %>
 
     <%= render "layouts/footer" %>

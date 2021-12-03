@@ -1,0 +1,74 @@
+# Additional translations at https://github.com/heartcombo/devise/wiki/I18n
+
+vi:
+  devise:
+    confirmations:
+      confirmed: "Your email address has been successfully confirmed."
+      send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."
+      send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions for how to confirm your email address in a few minutes."
+      not_receive_confirmation_instructions: "Không nhận được hướng dẫn xác nhận?"
+      resend_confirmation_instructions: "Gửi lại hướng dẫn xác nhận"
+    failure:
+      already_authenticated: "Bạn đã đăng nhập."
+      inactive: "Tài khoản của bạn chưa được kich hoạt."
+      invalid: "%{authentication_keys} hoặc mật khẩu không hợp lệ."
+      locked: "Tài khoản của bạn đã bị khóa."
+      last_attempt: "Bạn còn một lần thử nữa trước khi tài khoản của bạn bị khóa."
+      not_found_in_database: "%{authentication_keys} hoặc mật khẩu không hợp lệ."
+      timeout: "Phiên của bạn đã hết hạn. Vui lòng đăng nhập lại để tiếp tục."
+      unauthenticated: "Bạn cần đăng nhập hoặc đăng ký trước khi tiếp tục."
+      unconfirmed: "Bạn phải xác nhận địa chỉ email của mình trước khi tiếp tục."
+    mailer:
+      confirmation_instructions:
+        subject: "Xác nhận hướng dẫn"
+      reset_password_instructions:
+        subject: "Đặt lại hướng dẫn mật khẩu"
+      unlock_instructions:
+        subject: "Hướng dẫn mở khóa"
+      email_changed:
+        subject: "Email đã được thay đổi"
+      password_change:
+        subject: "Mật khẩu đã được thay đổi"
+    omniauth_callbacks:
+      failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
+      success: "Successfully authenticated from %{kind} account."
+    passwords:
+      no_token: "Bạn không thể truy cập trang này nếu không nhận được email đặt lại mật khẩu. Nếu bạn đến từ email đặt lại mật khẩu, vui lòng đảm bảo rằng bạn đã sử dụng URL đầy đủ được cung cấp."
+      send_instructions: "Bạn sẽ nhận được một email có hướng dẫn về cách đặt lại mật khẩu của mình sau vài phút."
+      send_paranoid_instructions: "Nếu địa chỉ email của bạn tồn tại trong cơ sở dữ liệu của chúng tôi, bạn sẽ nhận được liên kết khôi phục mật khẩu tại địa chỉ email của mình sau vài phút."
+      updated: "Mật khẩu của bạn đã được thay đổi thành công. Bây giờ bạn đã đăng nhập."
+      updated_not_active: "Mật khẩu của bạn đã được thay đổi thành công."
+      forgot_password: "Quên mật khẩu?"
+      send_me: "Gửi cho tôi hướng dẫn đặt lại mật khẩu"
+      change_password: "Đổi mật khẩu"
+      new_password: "Mật khẩu mới"
+      confirm_new_password: "Xác nhận mật khẩu mới"
+    registrations:
+      destroyed: "Tạm biệt! Tài khoản của bạn đã được hủy thành công. Mong rằng chúng tôi sẽ sớm gặp lại bạn."
+      signed_up: "Chào mừng! Bạn đã đăng ký thành công."
+      signed_up_but_inactive: "Bạn đã đăng ký thành công. Tuy nhiên, chúng tôi không thể đăng nhập cho bạn vì tài khoản của bạn chưa được kích hoạt."
+      signed_up_but_locked: "Bạn đã đăng ký thành công. Tuy nhiên, chúng tôi không thể đăng nhập cho bạn vì tài khoản của bạn bị khóa."
+      signed_up_but_unconfirmed: "Một tin nhắn với một liên kết xác nhận đã được gửi đến địa chỉ email của bạn. Vui lòng nhấp vào liên kết để kích hoạt tài khoản của bạn."
+      update_needs_confirmation: "Bạn đã cập nhật tài khoản của mình thành công, nhưng chúng tôi cần xác minh địa chỉ email mới của bạn. Vui lòng kiểm tra email của bạn và nhấp vào liên kết xác nhận để xác nhận địa chỉ email mới của bạn."
+      updated: "Tài khoản của bạn đã được cập nhật thành công."
+      updated_but_not_signed_in: "Tài khoản của bạn đã được cập nhật thành công, nhưng vì mật khẩu của bạn đã được thay đổi, bạn cần đăng nhập lại."
+    sessions:
+      signed_in: "Đã đăng nhập thành công."
+      signed_out: "Đã đăng xuất thành công."
+      already_signed_out: "Đã đăng xuất thành công."
+    unlocks:
+      send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
+      send_paranoid_instructions: "If your account exists, you will receive an email with instructions for how to unlock it in a few minutes."
+      unlocked: "Your account has been unlocked successfully. Please sign in to continue."
+      not_receive_unlock_instructions: "Không nhận được hướng dẫn mở khóa?"
+      resend_unlock_instructions: "Gửi lại hướng dẫn mở khóa"
+  errors:
+    messages:
+      already_confirmed: "was already confirmed, please try signing in"
+      confirmation_period_expired: "needs to be confirmed within %{period}, please request a new one"
+      expired: "has expired, please request a new one"
+      not_found: "not found"
+      not_locked: "was not locked"
+      not_saved:
+        one: "1 error prohibited this %{resource} from being saved:"
+        other: "%{count} errors prohibited this %{resource} from being saved:"
