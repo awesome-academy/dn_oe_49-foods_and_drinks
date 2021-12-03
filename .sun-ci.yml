@@ -28,10 +28,12 @@ jobs:
       MYSQL_PASSWORD: password_test
       MYSQL_ROOT_PASSWORD: password_test
   before_script:
-  - bundle _2.1.4_ install --path vendor/bundle
+    - apt-get update --yes
+    - apt-get install --yes nodejs
+    - bundle _2.1.4_ install --path vendor/bundle
   script:
   - RAILS_ENV=test bundle exec rails db:drop db:create db:migrate
-  # - bundle _2.1.4_ exec rspec
+  - bundle _2.1.4_ exec rspec
 
 - name: test:rubocop
   stage: test

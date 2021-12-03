@@ -86,6 +86,7 @@ en:
     log_in_with_google: "Log in with Google+"
     message_sign_up_success: "Sign Up Success!"
     message_sign_up_fail: "Sign Up Fail!"
+    characters_minimum: "characters minimum"
   log_in:
     log_in: "Log In"
     sign_up_now: "Sign Up Now!"
@@ -94,6 +95,7 @@ en:
     log_in_unsuccess: "Log in unsuccess!"
     remember_me: "Remember Me"
     please_log_in: "Please Login!"
+    forgot_password: "Forgot your password?"
   log_out: "Log Out"
   profile: "Profile"
   setting: "Setting"
@@ -275,3 +277,22 @@ en:
   cart: "Cart"
   my_cart: "My Cart"
   cart_empty: "There are no products in the cart!"
+  devise:
+    passwords:
+      edit: "Edit"
+      leave_blank: "leave blank if you don't want to change it"
+      current_password: "Current password"
+      confirm_your_changes: "we need your current password to confirm your changes"
+      update: "Update"
+      unhappy: "Unhappy"
+      cancel_account: "Cancel my account"
+      back: "Back"
+      notify_has_change_password: "We're contacting you to notify you that your password has been changed."
+    mail:
+      hello: "Hello"
+      requested_change_password: "Someone has requested a link to change your password. You can do this through the link below."
+      change_my_password: "Change my password"
+      ignore_email: "If you didn't request this, please ignore this email."
+      password_wont_change: "Your password won't change until you access the link above and create a new one."
+      notify_being_change_email: "We're contacting you to notify you that your email is being changed to"
+      notify_has_change_email: "We're contacting you to notify you that your email has been changed to"

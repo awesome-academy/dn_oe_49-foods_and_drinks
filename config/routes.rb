@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   scope "(:locale)", locale: /en|vi/ do
     namespace :admin do
       root "orders#index"
